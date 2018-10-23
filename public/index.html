@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>City Sight</title>
+    <link rel="stylesheet" href="assets/css/main.css"></link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script>
+  	var map;
+    function getColorCode(area_name, raw_response, color_range) {
+      var resultObject = searchArea(area_name, raw_response)
+      // console.log("Printing raw response object", raw_response)
+      // console.log("Printing result object", resultObject)
+      for (var i=0; i < color_range.length; i++) {
+        // console.log("Printing Numpoint", resultObject.numpoint_count, color_range[i].max)
+        if (((resultObject.numpoint_count > color_range[i].min) && (resultObject.numpoint_count < color_range[i].max)) || ((i+1 == color_range.length) && (resultObject.numpoint_count > color_range[i].max)) ) {
+          // console.log("Inside color range", color_range[i])
+          return color_range[i].color_code
+        }
+      }
+    }
+    function searchArea(nameKey, myArray){
+      for (var i=0; i < myArray.length; i++) {
+        // console.log("Name", nameKey)
+        // console.log("Response name", myArray[i].level.name)
+        if (myArray[i].name.toLowerCase().split(' ').join('-') === nameKey.toLowerCase().split(' ').join('-')) {
+          return myArray[i];
+        }
+      }
+    }
+  	function initMap() {
+  	  map = new google.maps.Map(document.getElementById('lakeer-map'), {
+  	    zoom: 11.8,
+  	    center: {lat: 17.42, lng: 78.3867},
+        styles: [
+                  {
+                    "stylers": [
+                      {
+                        "saturation": -100
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "water",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                      {
+                        "color": "#0099dd"
+                      }
+                    ]
+                  },
+                  {
+                    "elementType": "labels",
+                    "stylers": [
+                      {
+                        "visibility": "off"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "poi.park",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                      {
+                        "color": "#aadd55"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "road.highway",
+                    "elementType": "labels",
+                    "stylers": [
+                      {
+                        "visibility": "on"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "road.arterial",
+                    "elementType": "labels.text",
+                    "stylers": [
+                      {
+                        "visibility": "on"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "road.local",
+                    "elementType": "labels.text",
+                    "stylers": [
+                      {
+                        "visibility": "on"
+                      }
+                    ]
+                  },
+                  {}
+                ]
+  	  });
+      // Autocomplete starts here
+      var input = document.getElementById('autocomplete_search');
+      var autocomplete = new google.maps.places.Autocomplete(input);
+      autocomplete.bindTo('bounds', map);
+
+      autocomplete.setFields(
+          ['address_components', 'geometry', 'icon', 'name']);
+
+      // var infowindow = new google.maps.InfoWindow();
+      // var infowindowContent = document.getElementById('infowindow-content');
+      // infowindow.setContent(infowindowContent);
+      // var marker = new google.maps.Marker({
+      //   map: map,
+      //   anchorPoint: new google.maps.Point(0, -29)
+      // });
+
+      autocomplete.addListener('place_changed', function() {
+        // infowindow.close();
+        // marker.setVisible(false);
+        var place = autocomplete.getPlace();
+        if (!place.geometry) {
+          // User entered the name of a Place that was not suggested and
+          // pressed the Enter key, or the Place Details request failed.
+          window.alert("No details available for input: '" + place.name + "'");
+          return;
+        }
+
+        // If the place has a geometry, then present it on a map.
+        if (place.geometry.viewport) {
+          map.fitBounds(place.geometry.viewport);
+        } else {
+          map.setCenter(place.geometry.location);
+          map.setZoom(17);  // Why 17? Because it looks good.
+        }
+        // marker.setPosition(place.geometry.location);
+        // marker.setVisible(true);
+
+        var address = '';
+        if (place.address_components) {
+          address = [
+            (place.address_components[0] && place.address_components[0].short_name || ''),
+            (place.address_components[1] && place.address_components[1].short_name || ''),
+            (place.address_components[2] && place.address_components[2].short_name || '')
+          ].join(' ');
+        }
+
+        // infowindowContent.children['place-icon'].src = place.icon;
+        // infowindowContent.children['place-name'].textContent = place.name;
+        // infowindowContent.children['place-address'].textContent = address;
+        // infowindow.open(map, marker);
+      });
+  	}
+  	</script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADN__bZo7vXEHt3FV2KXIYuLlfgcZRBS8&libraries=places"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="/dist/build.js"></script>
+  </body>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    $('.toggle_icon').on('click', function(){
+      if ($(this).hasClass("glyphicon-plus")) {
+        $(this).removeClass("glyphicon-plus").addClass("glyphicon-minus");
+      }else{
+        $(this).removeClass("glyphicon-minus").addClass("glyphicon-plus");
+      }
+    });
+  </script>
+  <script>
+    $(document).ready(function() {
+
+      var scrollLink = $('.scroll');
+
+      // Smooth scrolling
+      scrollLink.click(function(e) {
+        e.preventDefault();
+        $('body,html').animate({
+          scrollTop: $(this.hash).offset().top
+        }, 1000 );
+      });
+
+      // Active link switching
+      $(window).scroll(function() {
+        var scrollbarLocation = $(this).scrollTop();
+
+        scrollLink.each(function() {
+
+          var sectionOffset = $(this.hash).offset().top - 20;
+
+          if ( sectionOffset <= scrollbarLocation ) {
+            $(this).parent().addClass('active');
+            $(this).parent().siblings().removeClass('active');
+          }
+        })
+
+      })
+
+    })
+  </script>
+  <script>
+    (function() {
+      var value;
+
+      $(document).on('keyup', '#type_search', function() {
+        value = $(this).val().toLowerCase();
+        $('#type_search_list h3').filter(function() {
+          console.log($(this).text().toLowerCase().indexOf(value))
+          return $(this).toggle($(this).text().toLowerCase().indexOf(value) < 1);
+        });
+      });
+
+    }).call(this);
+  </script>
+  <script>
+    $("#filter").keyup(function(){
+      var selectSize = $(this).val().toLowerCase();
+      filter(selectSize);
+    });
+    function filter(e) {
+        var regex = new RegExp('\\b\\w*' + e + '\\w*\\b');
+            $('.name').hide().filter(function () {
+            return  regex.test($(this).data('name'))
+        }).show();
+    }
+  </script>
+   <!-- Right click Functionality code -->
+  <script>
+    $(document).bind("contextmenu",function(e){
+      e.preventDefault();
+      console.log(e.pageX + "," + e.pageY);
+      $("#cntnr").css("left",e.pageX);
+      $("#cntnr").css("top",e.pageY);
+     // $("#cntnr").hide(100);
+      $("#cntnr").fadeIn(200,startFocusOut());
+    });
+
+    function startFocusOut(){
+      $(document).on("click",function(){
+        $("#cntnr").hide();
+        $(document).off("click");
+      });
+    }
+
+    $("#items > li").click(function(){
+      console.log("You have selected "+$(this).text());
+    });
+  </script>
+</html>

@@ -1,0 +1,684 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body {
+  font-family: 'Open Sans', sans-serif !important;
+  background-color: #F4F5F7;
+  color: #333;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 0px;
+}
+.main-div {
+  width: 440px;
+  height: 100vh;
+  margin: 60px auto;
+}
+.m10{
+  margin-top: 10px;
+}
+.wd30{
+  width: 30px;
+}
+.input-field {
+  width: 100%;
+  border: 1px solid #C1C7D0;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  margin-bottom: 25px;
+  padding: 10px;
+  color: #172B4D;
+  opacity: 0.6;
+}
+.login-btn{
+  padding: 10px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: #005588;
+  color: #FFF;
+  border: none;
+  cursor: pointer;
+}
+.input-labels{
+  font-size: 14px;
+  line-height: 30px;
+  text-shadow: 0px 1px #b4b8c0;
+}
+.forgot-psw{
+  color: #172B4D;
+  float: right;
+  font-size: 10px;
+  padding: 5px 0px;
+  opacity: 0.6;
+}
+#login-alert {
+  text-align: center;
+  color: red;
+  padding: 10px;
+}
+#email-alert, #password-alert {
+  color: red;
+}
+
+/*home-page*/
+.nav-bar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  /*overflow: hidden;*/
+  background-color: #1b5587;
+}
+li {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+.nav-header {
+  width: 82%;
+}
+.nav-icons {
+  float: right;
+  padding-right: 10px;
+}
+.profile{
+  padding: 8px !important;
+  background-color: #226694;
+  border-radius: 4px;
+}
+.bg-image{
+  background-image: url("/assets/images/india-hyderabad-banner.jpg");
+  background-size: cover;
+  background-position: right;
+}
+.city{
+  margin: 0px auto;
+  color: #fff;
+  width: 550px;
+  font-weight: 600;
+}
+.explore-city{
+  text-align: center;
+  font-size: 28px;
+  padding: 60px 27px 0px 27px;
+  line-height: 30px;
+  margin-top: 0px;
+}
+.city-search {
+  text-align: center;
+  padding-bottom: 80px;
+  padding-top: 20px;
+}
+.search-icon{
+  position: absolute;
+  z-index: 1;
+  padding: 7px;
+}
+.city-search-box {
+  height: 35px;
+  width: 280px;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 8px 0 rgba(29,33,41,0.4);
+  position: relative;
+  padding-left: 30px;
+  border: none;
+}
+
+.nav-btn{
+  background-color: #226694;
+  padding: 10px;
+}
+.tooltip {
+  position: relative !important;
+  display: inline-block !important;
+  opacity: 2 !important;
+  font-size: 12px;
+  border-radius: 4px;
+  z-index: inherit !important;
+  padding: 5px 5px 5px 0px;
+}
+.tooltip > a, .tooltip > a:hover  {
+  color: #fff;
+  text-decoration: none;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  background-color: #fff;
+  color: #1b5587;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  left: 5px;
+  top: 40px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+
+
+/*----home page css-----*/
+.sidenav a {
+  padding: 6px 8px 6px 15px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  opacity: 0.6;
+}
+.sidenav a:hover {
+  border-left: 2px solid #1b5587;
+  text-decoration: none;
+  color: #172B4D;
+  font-weight: 600;
+  opacity: unset;
+}
+
+.sidenav-head {
+  font-size: 10px;
+  color: #818181;
+  opacity: 0.6;
+  padding: 8px 8px 8px 15px;
+  margin-bottom: 0px;
+  font-weight: 600;
+}
+
+.available-service{
+  color: #172B4D;
+  font-weight: bold;
+}
+.available-service h4 {
+  opacity: 0.4;
+  font-size: 16px;
+  border-bottom: 2px solid #DFE1E6;
+  padding-bottom: 10px;
+  font-weight: 600;
+}
+
+.available-service h3 {
+  color: #172B4D;
+  font-size: 18px;
+  font-weight: bold;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+.available-parent-flex {
+  display: flex;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  flex-wrap: wrap;
+}
+.available-child{
+  width: 30%;
+  box-shadow: 0px 2px 8px -3px #333;
+  padding: 10px;
+  opacity: 0.8;
+  margin-right: 15px;
+  margin-bottom: 25px;
+  height: 95px;
+}
+break{
+  flex-basis: 100%;
+  width: 100%;
+  height: 0px;
+  overflow: hidden;
+}
+.available-child > a{
+  color: #172B4D;
+}
+.available-child > a:hover{
+  text-decoration: none;
+}
+.location-text{
+  font-size: 12px;
+  color: #818181;
+  font-weight: normal;
+}
+.powered-by_text{
+  font-size: 10px;
+  color: #818181;
+  font-weight: normal;
+}
+.available-child-parent {
+  display: flex;
+}
+.child-parent-1{
+  width: 10%;
+  padding-right: 30px;
+}
+.child-parent-2 {
+  width: 90%;
+}
+
+.mb2{
+  margin-bottom: 2px;
+}
+
+.mt15{
+  margin-top: 15px;
+}
+.custom-opacity {
+  opacity: 0.8;
+}
+.cursor_pointer{
+  cursor: pointer;
+}
+/*---------dashboard-css----------*/
+.dynamic-map{
+  position: relative;
+}
+.fixed-sidenav {
+  width: 290px;
+  position: absolute;
+  top: 50px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 4px;
+  left: 10px;
+}
+.location-lable{
+  opacity: 0.5;
+  color: #172B4D;
+  font-size: 12px;
+  font-weight: 600;
+}
+.location-input{
+  width: 260px;
+  border: 1px solid #EBECF0;
+  border-radius: 2px;
+  padding: 5px 10px;
+}
+.department-header {
+  opacity: 0.5;
+  color: #172B4D;
+  font-size: 12px;
+  padding: 15px 10px 10px 0px;
+  margin-bottom: 0px;
+}
+.square-box-div {
+  padding: 20px 10px 10px 0px;
+  margin-bottom: 0px;
+}
+.square-box{
+  height: 10px;
+  width: 10px;
+  float: left;
+  margin-right: 5px;
+}
+/* square box color*/
+.hyderabad_bus_stops{
+  background-color: #cddc39;
+}
+
+.hyderabad_metro_stations{
+  background-color: #f69702;
+}
+
+.hyderabad_mmts_stops, .footpath, .streetlight, .drainage, .construction_debris, .garbage, .manhole, .pothole{
+  background-color: #EC2240;
+}
+
+.schools{
+  background-color: #00C7E6;
+}
+
+.govt_hospitals{
+  background-color: #f955b8;
+}
+
+.all_affordable_healthcare_facilities{
+  background-color: #667cfa;
+}
+
+.basti_dawakhana{
+  background-color: #a17aff;
+}
+
+.govt_primary_health_clinics{
+  background-color: #4baf50;
+}
+
+.private_arogyasri_empanelled{
+  background-color: #ffc400;
+}
+
+.rs_5_meal_canteens{
+  background-color: #57d9a3;
+}
+
+.public_toilet_locations {
+  background-color: #00C7E6;
+}
+.public_toilet{
+  background-color: #EC2240;
+}
+.old_age_shelters {
+  background-color: #00bfd7;
+}
+.long_term_housing {
+  background: #8b8b8b;
+}
+/*square box color end*/
+
+.bountry-filter {
+  padding: 10px;
+  color: #172B4D;
+  font-size: 14px;
+}
+.department-list-filter > ul {
+  padding: 10px 5px;
+}
+.sub-category > .glyphicon, .dropdown-list > li > .glyphicon, .boundary > .glyphicon, .dropdown-child-list > li > .glyphicon{
+  font-family: inherit !important;
+  font-weight: inherit !important;
+}
+
+.department-boundary{
+  height: 480px;
+  overflow-y: scroll;
+  margin-top: 10px;
+}
+.boundaries ul, .department-list-filter ul {
+  padding: 0px;
+  margin-bottom: 0px;
+}
+.boundaries > ul > li, .department-list-filter > ul > li, .traffic-layer-block  > ul > li{
+  color: #172B4D;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.8 !important;
+  display: block;
+  padding: 10px 0px;
+  text-align: left;
+  cursor: pointer;
+}
+.underserved-areas-div{
+  opacity: 0.8;
+  color: #172B4D;
+  font-size: 14px;
+  padding: 5px;
+  border-top: 1px solid #EBECF0;
+  margin-top: 10px;
+}
+.underserved-areas-div > p{
+  margin-bottom: 0px;
+}
+.sub-category > ul {
+  padding: 0px;
+}
+.dropdown-list > li {
+  color: #172B4D;
+  font-size: 12px;
+  padding: 5px 10px;
+  font-weight: normal;
+  width: 100%;
+  display: -webkit-box;
+}
+.dropdown-list > li > input:checked {
+  color: #172B4D;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+.dropdown-child-list {
+  padding-left: 0px;
+}
+.dropdown-child-list >li {
+  padding: 5px 23px !important;
+  color: #172B4D;
+  font-weight: normal;
+  font-size: 12px;
+  width: 100%;
+  text-align: left;
+}
+.dropdown-child-list >li > input  + label{
+  opacity: 0.5;
+  padding-left: 5px;
+}
+label {
+  font-weight: inherit !important;
+}
+input[type="checkbox"]:checked + label {
+  opacity: 2 !important;
+}
+.pointer {
+  cursor: pointer;
+}
+
+.glyphicon-refresh {
+  animation: spinIt 1.5s infinite linear;
+}
+
+@keyframes spinIt {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(359deg); }
+}
+
+/* call option dropdown*/
+.call-btn-dropdown > .dropdown-menu {
+  right: 0 !important;
+  left: inherit !important;
+}
+.call-btn-dropdown > .dropdown-menu > li {
+  color: #172B4D;
+  font-size: 12px;
+}
+.call-btn-dropdown > .dropdown-menu > li:nth-child(1){
+  padding: 10px 20px 0px 20px;
+  opacity: 0.4;
+}
+.call-btn-dropdown > .dropdown-menu > li:nth-child(3) {
+  border-top: 1px solid #EBECF0;
+  padding: 10px 48px 10px 6px;
+  margin-top: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-child-list >li.active {
+  opacity: inherit;
+}
+
+/*dashbord-heatmap*/
+.temp-div {
+    position: absolute;
+    width: 20%;
+    background-color: #fff !important;
+    border-radius: 4px;
+    left: 40%;
+    bottom: 10px;
+}
+.parent-temp-flex{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 5px;
+}
+.parent-temp-flex > .child-1, .child-2, .child-3, .child-4{
+  width: 22%;
+  margin-top: 5px;
+}
+.temp-degree {
+  font-size: 8px;
+  color: #172B4D;
+  margin-bottom: 0px;
+}
+
+.parent-temp-flex > .child-1:first-child > .color-container {
+  height: 8px;
+  border-radius:  5px 0 0 5px;
+  margin-bottom: 5px;
+}
+.parent-temp-flex > .child-1 > .color-container {
+  border: 0px;
+  height: 8px;
+  margin-bottom: 5px;
+}
+.parent-temp-flex > .child-1:last-child > .color-container{
+  height: 8px;
+  border-radius: 0 5px 5px 0;
+  margin-bottom: 5px;
+}
+/*heat-map end*/
+
+
+
+/*check box start*/
+
+input[type='checkbox'] + label{
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
+  position: relative;
+  cursor: pointer;
+}
+
+#ghmc-boundary > li > input, .dropdown-child-list > li > input{
+  font-size: 9px;
+}
+
+input[type='checkbox']:checked:after {
+  padding: 0px 2px 0px 2px;
+  border-radius: 4px;
+}
+.zone > input[type='checkbox']:checked:after {
+  background: #006644;
+  color: #fff;
+  content: '\2714';
+}
+.metro > input[type='checkbox']:checked:after {
+  background: #f69702;
+  color: #fff;
+  content: '\2714';
+}
+.bus-stops > input[type='checkbox']:checked:after {
+  background: #cddc39;
+  color: #fff;
+  content: '\2714';
+}
+.education > input[type='checkbox']:checked:after {
+  background: #00C7E6;
+  color: #fff;
+  content: '\2714';
+}
+.mmts-stops > input[type='checkbox']:checked:after, .grievance > input[type='checkbox']:checked:after {
+  background: #EC2240;
+  color: #fff;
+  content: '\2714';
+  opacity: 2;
+}
+.hospital > input[type='checkbox']:checked:after {
+  background: #f955b8;
+  color: #fff;
+  content: '\2714';
+}
+.afford_health_care > input[type='checkbox']:checked:after {
+  background: #667cfa;
+  color: #fff;
+  content: '\2714';
+}
+.basti_dawakhana_check > input[type='checkbox']:checked:after {
+  background: #a17aff;
+  color: #fff;
+  content: '\2714';
+}
+.govt_health_clinics >  input[type='checkbox']:checked:after {
+  background: #4baf50;
+  color: #fff;
+  content: '\2714';
+}
+.pvt_arogyasri_empanelled >  input[type='checkbox']:checked:after {
+  background: #ffc400;
+  color: #fff;
+  content: '\2714';
+}
+.toilet_location >  input[type='checkbox']:checked:after {
+  background: #00C7E6;
+  color: #fff;
+  content: '\2714';
+}
+.nutrition >  input[type='checkbox']:checked:after {
+  background: #00dd9f;
+  color: #fff;
+  content: '\2714';
+}
+.shelter_housing >  input[type='checkbox']:checked:after {
+  background: #00bfd7;
+  color: #fff;
+  content: '\2714';
+}
+.housing >  input[type='checkbox']:checked:after {
+  background: #8b8b8b;
+  color: #fff;
+  content: '\2714';
+}
+
+/*checkbox end*/
+
+.available-child:hover {
+  box-shadow:4px 5px 5px -4px #333 ;
+}
+.loader-section {
+  width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    top: 300px;
+    position: absolute;
+    border: 1px solid #eee;
+    background: white;
+    left: 450px;
+    vertical-align: middle;
+    padding: 20px;
+    font-size: 24px;
+}
+
+
+/* Right click CSS */
+#items{
+  list-style:none;
+  margin:0px;
+  margin-top:4px;
+  padding-left:10px;
+  padding-right:10px;
+  padding-bottom:3px;
+  font-size:17px;
+  color: #333333;
+
+}
+hr { width: 85%;
+  background-color:#E4E4E4;
+  border-color:#E4E4E4;
+    color:#E4E4E4;
+}
+#cntnr{
+  display:none;
+  position:fixed;
+  border:1px solid #B2B2B2;
+  width:150px;
+  background:#F9F9F9;
+  box-shadow: 3px 3px 2px #E9E9E9;
+  border-radius:4px;
+}
+
+#cntnr li{
+  color: #777;
+  padding: 3px;
+  padding-left:10px;
+}
+
+
+#items :hover{
+   color: white;
+  background:#284570;
+  border-radius:2px;
+}
