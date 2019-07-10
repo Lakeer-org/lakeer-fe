@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/layer/white</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icon/layer/white" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="layers-(1)" transform="translate(4.000000, 5.000000)" fill="#FFFFFF">
+            <polygon id="Path" points="0.199769547 9.05823868 8.00345679 13.5656296 15.807144 9.05823868 8.00345679 4.56329218"></polygon>
+            <polygon id="Path" points="8.00345679 4.56329218 0.199769547 9.05823868 15.807144 9.05823868"></polygon>
+            <polygon id="Path" points="0.199769547 4.71311934 8.00345679 9.20806584 15.807144 4.71311934 8.00345679 0.205728395"></polygon>
+        </g>
+    </g>
+</svg>

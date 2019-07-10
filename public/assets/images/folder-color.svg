@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/folder/color</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icon/folder/color" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="folder" transform="translate(4.000000, 5.000000)">
+            <polygon id="Path" fill="#3C4451" points="8.01426025 3.76470588 16 3.76470588 16 1.88235294 6.58823529 1.88235294"></polygon>
+            <polygon id="Path" fill="#556080" points="6.89655172 1.93771626 5.51724138 8.97892871e-14 0 8.97892871e-14 0 1.93771626 0 14.1176471 16 14.1176471 16 3.76470588 8.27586207 3.76470588"></polygon>
+        </g>
+    </g>
+</svg>
