@@ -18,7 +18,7 @@
     "html2canvas": "^1.0.0-alpha.12",
     "jquery": "^3.3.1",
     "jspdf": "^1.4.1",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "ssl-express-www": "^3.0.3",
     "vue": "^2.6.8",
     "vue-color": "^2.7.0",
